@@ -1,5 +1,6 @@
 import os
 
+
 def get_file_names(root_path, tag):
     result = []
     empty = True
@@ -12,6 +13,7 @@ def get_file_names(root_path, tag):
         return None
     else:
         return result
+
 
 def main():
     print("Введите полный путь до директории: ")
@@ -36,6 +38,7 @@ def main():
     else:
         print("Не найдено файлов с таким расширением")
         return
+
 
 if __name__ == "__main__":
     main()

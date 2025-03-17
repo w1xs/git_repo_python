@@ -11,6 +11,7 @@ def input_data(path: str):
             data.append(element)
     return data
 
+
 def main():
     print("Введите полный путь к файлу: ")
     path = input()
@@ -31,6 +32,7 @@ def main():
     else:
         print("Введены не верные данные, повторите попытку")
     return
+
 
 if __name__ == "__main__":
     main()

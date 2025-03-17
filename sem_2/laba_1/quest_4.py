@@ -6,6 +6,7 @@ def get_data(path: str):
     except:
         return None
 
+
 def main():
     element = []
     result = []
@@ -21,7 +22,7 @@ def main():
                 print(" ".join(row_data))
             else:
                 for i in range(len(row_data) - n + 1):
-                    for j in range(i, i+n):
+                    for j in range(i, i + n):
                         element.append(row_data[j])
                     result.append(" ".join(element))
                     element = []
@@ -31,6 +32,7 @@ def main():
     else:
         print("Введены не верные данные, повторите попытку")
     return
+
 
 if __name__ == "__main__":
     main()
