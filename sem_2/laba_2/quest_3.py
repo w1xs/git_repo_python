@@ -1,6 +1,7 @@
 import os
 import shutil
 
+
 def check_for_correct_path(path):
     if not os.path.exists(path):
         print("Такого пути не существует, попробуйте еще раз")
@@ -10,7 +11,8 @@ def check_for_correct_path(path):
         return False
     return True
 
-def transfer(src_path : str, dst_path : str):
+
+def transfer(src_path: str, dst_path: str):
     copies = 1
     for root, dirs, files in os.walk(src_path):
         for file in files:
@@ -41,6 +43,7 @@ def main():
     shutil.make_archive(dst_path + "_archive", "zip", dst_path)
 
     return
+
 
 if __name__ == "__main__":
     main()
