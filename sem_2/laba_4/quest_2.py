@@ -4,7 +4,7 @@ import csv
 
 def main():
     doc = DocxTemplate("template.docx")
-    with open(".\\data_marathon.csv", "r") as file:
+    with open("data_marathon.csv", "r") as file:
         row_data = list(csv.DictReader(file))
 
     print(row_data)
