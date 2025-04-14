@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageFilter, ImageEnhance, ImageFont
 import sys
 
+
 def check_float(number: str):
     for c in number:
         if c not in ".0123456789":
@@ -8,12 +9,12 @@ def check_float(number: str):
     return True
 
 
-def check_coords( coords : str):
+def check_coords(coords: str):
     result = []
     coords = coords.split()
     if len(coords) > 4:
         return None
-    for i in range( len(coords) ):
+    for i in range(len(coords)):
         if not coords[i].isdigit():
             return None
         if int(coords[i]) < 0:
@@ -25,7 +26,8 @@ def check_coords( coords : str):
 
     return result
 
-def set_rotate(type : int, im):
+
+def set_rotate(type: int, im):
     if type == 0:
         im = im.transpose(Image.FLIP_LEFT_RIGHT)
     elif type == 1:
@@ -37,6 +39,7 @@ def set_rotate(type : int, im):
     else:
         return None
     return im
+
 
 def set_sepia_filter(im):
     width, height = im.size
@@ -63,10 +66,12 @@ def set_sepia_filter(im):
 
     return im
 
-def set_bright(coefficient : float, im):
+
+def set_bright(coefficient: float, im):
     enchancer = ImageEnhance.Brightness(im)
     im = enchancer.enhance(coefficient)
     return im
+
 
 def get_middle_color(im):
     mr = mg = mb = 0
@@ -98,24 +103,25 @@ def get_middle_color(im):
     return new_im
 
 
-def set_text(x : int, y : int, text : str, im):
+def set_text(x: int, y: int, text: str, im):
     draw = ImageDraw.Draw(im)
     font = ImageFont.truetype("arial.ttf", size=20)
-    draw.text((x,y), text=text, font=font)
+    draw.text((x, y), text=text, font=font)
     return im
 
 
-def set_figure(type : int, coords : (), im):
+def set_figure(type: int, coords: (), im):
     draw = ImageDraw.Draw(im)
     if type == 0:
-        draw.ellipse(coords,  fill=(0, 191, 255), outline='black', width=3)
+        draw.ellipse(coords, fill=(0, 191, 255), outline='black', width=3)
     if type == 1:
-        draw.line(coords,  fill=(0, 191, 255), width=3)
+        draw.line(coords, fill=(0, 191, 255), width=3)
     if type == 2:
         draw.arc(coords, start=0, end=230, fill=(0, 191, 255), width=3)
     if type == 3:
-        draw.rectangle(coords,  fill=(0, 191, 255), outline='black', width=3)
+        draw.rectangle(coords, fill=(0, 191, 255), outline='black', width=3)
     return im
+
 
 def caller(im):
     print("Choose a number of an action from list:")
@@ -172,7 +178,7 @@ def caller(im):
             y = input()
             print("Enter text: ")
             text = input()
-            coords = (x, y)
+            coords = "" + x + " " + y
             coords = check_coords(coords)
             if coords:
                 im = set_text(coords[0], coords[1], text, im)
@@ -232,7 +238,6 @@ def caller(im):
     return im
 
 
-
 def main():
     print("Enter the path to the image: ")
     path = input()
@@ -252,6 +257,7 @@ def main():
         print("Something goes wrong, try again.")
 
     return
+
 
 if __name__ == "__main__":
     main()

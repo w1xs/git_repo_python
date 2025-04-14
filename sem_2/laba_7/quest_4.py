@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 
+
 def main():
     with open('udemy_courses.csv', 'r') as f:
         data = []
@@ -23,7 +24,7 @@ def main():
         data = data[1:]
         data = np.array(data)
         mean_price = data.mean(axis=0)[1]
-        min_count_sub = np.min(data,axis=0)[2]
+        min_count_sub = np.min(data, axis=0)[2]
         max_lection_length = np.max(data, axis=0)[5]
         levels = [data[_][4] for _ in range(len(data))]
         counts = np.bincount(levels)
