@@ -2,6 +2,7 @@ import json
 from docxtpl import DocxTemplate
 import csv
 
+
 def main():
     doc = DocxTemplate("template.docx")
     with open("data_marathon.csv", "r") as file:
@@ -18,9 +19,9 @@ def main():
             data[item["year"]][item["marathon_city"]] = []
 
         buffer = {
-            "name":item["name"],
-            "sex":item["sex"],
-            "time":item["time"],
+            "name": item["name"],
+            "sex": item["sex"],
+            "time": item["time"],
         }
         data[item["year"]][item["marathon_city"]].append(buffer)
 
@@ -32,6 +33,7 @@ def main():
 
     doc.render(context)
     doc.save("result.docx")
+
 
 if __name__ == "__main__":
     main()
