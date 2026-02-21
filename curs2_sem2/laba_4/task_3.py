@@ -38,7 +38,7 @@ class DraggableWidget(QLabel):
         drag.exec()
 
 
-class MainWindow(QWidget):
+class Task3Window(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Перетаскивание виджетов")
@@ -93,8 +93,3 @@ class MainWindow(QWidget):
             event.ignore()
 
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec())

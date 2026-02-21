@@ -6,10 +6,9 @@ from PySide6.QtCore import Qt
 from PySide6.QtGui import QFont
 
 
-class SimpleRegistrationForm(QWidget):
+class Task2Window(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Регистрация")
         self.setGeometry(200, 200, 500, 500)
 
         main_layout = QVBoxLayout()
@@ -101,10 +100,3 @@ class SimpleRegistrationForm(QWidget):
             QMessageBox.warning(self, "Ошибка", "\n".join(errors))
         else:
             QMessageBox.information(self, "Успех", "Все данные заполнены верно!")
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = SimpleRegistrationForm()
-    window.show()
-    sys.exit(app.exec())
