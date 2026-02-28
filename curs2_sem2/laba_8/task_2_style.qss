@@ -1,0 +1,67 @@
+QMainWindow, QWidget {
+    background-color: white;
+    color: black;
+}
+
+QPushButton {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 8px 16px;
+    font-size: 14px;
+    min-width: 100px;
+}
+
+QPushButton:hover {
+    background-color: #f0f0f0;
+    border: 2px solid black;
+}
+
+QPushButton:pressed {
+    background-color: #d0d0d0;
+    border: 2px solid black;
+}
+
+QListWidget {
+    border: 2px solid black;
+    background-color: white;
+    outline: none;
+    font-size: 24px;
+}
+
+QListWidget::item {
+    padding: 10px;
+    border-bottom: 1px solid #cccccc;
+}
+
+QListWidget::item:selected {
+    background-color: #e0e0e0;
+    border: 1px solid black;
+    color: black;
+}
+
+QScrollBar:vertical {
+    border: 1px solid black;
+    background: white;
+    width: 15px;
+}
+
+QScrollBar::handle:vertical {
+    background: #d0d0d0;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #a0a0a0;
+}
+
+
+QLabel {
+    color: black;
+    font-size: 25px;
+}
+
+QFileDialog {
+    background-color: white;
+    color: black;
+}
