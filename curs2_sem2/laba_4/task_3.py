@@ -76,7 +76,6 @@ class Task3Window(QWidget):
             source_widget = event.source()
             if source_widget and source_widget in self.widgets:
                 source_widget.move(drop_pos.x() - 40, drop_pos.y() - 20)
-                source_widget.show()
                 event.accept()
             else:
                 event.ignore()
